@@ -6,7 +6,7 @@
 {%if result%}
 <div class = 'main'>
     <h1>Проверка услуг медицинского страхования</h1>
-    <p class = 'polis_id'><input type="text" name="polis_id" id="polis_id" placeholder="Введите номер полиса" ></p>
+    <p class = 'polis_id'><input type="text" name="polis_id" id="polis_id" placeholder="{{result.0.4}}" ></p>
     <div class = 'end-date'>Дата окончания: {{result.0.3}}</div>
     <div class = 'sk-tel'>Телефон: {{result.0.0}}</div>
     <p class = 'sk_name_select'> 
