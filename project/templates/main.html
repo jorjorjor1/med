@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+{% load static %}
+{% load staticfiles %}
+<head>
+<meta charset="UTF-8">
+
+<script src ="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+<script src ="{% static 'js/ajax.js' %}"></script>
+<link rel="stylesheet" href="{% static 'css/search.css' %}">
+</head>
+<body>
+    <div class = 'main'>
+        <h1>Проверка услуг медицинского страхования</h1>
+        <div class= 'buttons-menu'>
+            {%if result.0.2 == "ДМС"%}
+            <div class="first"><button disabled>ОМС</button></div>
+            <div class="first"><button style = 'background-color: #ED462F;; color:white; font-weight: bold' disabled>ДМС</button></div>
+            {%elif result.0.2 == "ОМС"%}
+            <div class="first"><button style = 'background-color: #ED462F;; color:white; font-weight: bold' disabled>ОМС</button></div>
+            <div class="first"><button disabled>ДМС</button></div>
+            {%else%}
+            <div class="first"><button data-backcolor="red">ОМС</button></div>
+            <div class="first"><button data-backcolor="red">ДМС</button></div>
+            {%endif%}
+
+        </div>
+        <form method="POST" accept-charset="UTF-8" id='main-form'> 
+            <!-- {% csrf_token %}
+            {%if result%}
+            <p class = 'polis_id'><input type="text"  disabled name="polis_id_with_result" value={{result.0.4}} ></p>
+            {%else%} -->
+            <p class = 'polis_id'><input type="text" name="polis_id" id="polis_id" placeholder="Введите номер полиса" ></p>
+            <!-- {%endif%} -->
+            
+<!--             
+            {%if result%}
+            <p class = 'sk_name_select'> <select disabled>
+                {%if sk_names_filtred%}
+                    <option id = 'sk_name_choice'>{{result.0.1}}</option>
+                    {%for item in sk_names_filtred%}
+                    <option id = 'sk_name_choice'>{{item}}</option>
+                    {%endfor%}
+                {%endif%}
+            </select></p>
+            {%else%} -->
+            <p class = 'sk_name_select'> <select>
+                    {%if sk_names_filtred%}
+                        <option id = 'sk_name_choice'>Введите название страховой</option>
+                        {%for item in sk_names_filtred%}
+                        <option id = 'sk_name_choice'>{{item}}</option>
+                        {%endfor%}
+                    {%endif%}
+                </select></p>
+            {%endif%}
+            <!-- Trigger/Open The Modal -->
+
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+                <div class="modal-content">
+                    <div id = 'error-text-1'>Полис с таким номером не обнаружен</div>
+                    <div id = 'error-text-2'>Попробуйте изменить данные</div>
+
+                    <span class="close" onclick = closeModal()>Oк</span>
+                </div>
+
+            </div>
+
+            {% csrf_token %}
+            <div id = 'choose-services-text'>Выберите медицинские услуги:</div>
+            <div class = 'service-buttons'>
+                {%if result%}
+                <!-- <input type = "text" id = 'search' name = 'search' placeholder="Введите запрашиваемую услугу для пациента" disabled> -->
+                {%else%}
+                <input type = "text" id = 'search' name = 'search' placeholder="Введите запрашиваемую услугу для пациента" onkeyup="getVal()">
+                {%endif%}
+                <div id='search-results'></div>
+                
+            </div>
+            <input type="hidden" name = 'chosenQuestions' value="" id = 'js_data_input'>
+            <div class = 'services-area'>
+
+                    <input type="submit" value="Проверить" id = 'post-form' class = 'before-submit' disabled>
+
+            </div>
+
+            <script type="text/javascript" src="{% static 'js/pick_from_results.js'%}"></script>
+            <div id = 'services-search-results'>
+
+
+            </div>
+
+<!-- 
+            {% if result%}
+            <input type="submit" value="Проверить" id = 'post-form' class = 'before-submit' disabled>
+            {%else%}
+
+            {%endif%} -->
+        </form>
+    </div>
+</body>
+
+
+
+
+          
+
+
+

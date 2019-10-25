@@ -1,0 +1,74 @@
+{% load static %}
+<script type="text/javascript" src="{% static 'js/pick_from_results.js'%}"></script>
+<script src ="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+<script src ="{% static 'js/ajax.js' %}"></script>
+
+{%if result%}
+<div class = 'main'>
+    <h1>Проверка услуг медицинского страхования</h1>
+    <p class = 'polis_id'><input type="text" name="polis_id" id="polis_id" placeholder="Введите номер полиса" ></p>
+    <div class = 'end-date'>Дата окончания: {{result.0.3}}</div>
+    <div class = 'sk-tel'>Телефон: {{result.0.0}}</div>
+    <p class = 'sk_name_select'> 
+        <select class="sk_name_select" disabled>
+            {%if sk_names_filtred%}
+                <option id = 'sk_name_select'>{{result.0.1}}</option>
+                {%for item in sk_names_filtred%}
+                <option id = 'sk_name_choice'>{{item}}</option>
+                {%endfor%}
+            {%endif%}
+        </select></p>
+    {%endif%}
+
+    <div class= 'buttons-menu'>
+            {%if result.0.2 == "ДМС"%}
+            <div class="first"><button disabled>ОМС</button></div>
+            <div class="first"><button style = 'background-color: #ED462F;; color:white; font-weight: bold' disabled>ДМС</button></div>
+            {%elif result.0.2 == "ОМС"%}
+            <div class="first"><button style = 'background-color: #ED462F;; color:white; font-weight: bold' disabled>ОМС</button></div>
+            <div class="first"><button disabled>ДМС</button></div>
+            {%else%}
+            <div class="first"><button data-backcolor="red">ОМС</button></div>
+            <div class="first"><button data-backcolor="red">ДМС</button></div>
+            {%endif%}
+    </div>
+    <div id = 'choose-services-text'>Выберите медицинские услуги:</div>
+    <div class = 'service-buttons'>
+        {%if result%}
+        <input type = "text" id = 'search' name = 'search' placeholder="Введите запрашиваемую услугу для пациента" disabled>
+        {%else%}
+        <input type = "text" id = 'search' name = 'search' placeholder="Введите запрашиваемую услугу для пациента" onkeyup="getVal()">
+        {%endif%}
+        <div id='search-results'></div>
+        
+    </div>
+    <div class = 'services-area'></div>
+        {% if services_included_html %}
+        <div class = 'included'>
+            <div class = 'selected_services'>Включено:</div>
+            {% for elem in services_included_html%}
+            <div class = 'selected_services'><img src="{% static 'css/checkmark.svg' %}" width="15" height="15" alt="галочка"> {{elem}} </div>
+            {% endfor %}
+        {%endif%}
+        </div>    
+        <div class = 'excluded'>
+            <div class = 'selected_services'>Не включено:</div>
+            {% if services_excluded_html %}
+
+                {% for elem in services_excluded_html%}
+                <div class = 'selected_services'> <img src="{% static 'css/cross.svg' %}" width="15" height="15" alt="крестик"> {{elem}}</div>
+                {% endfor %}
+                {%endif%}
+            {%if inp_value_list %}
+                {%for elem in inp_value_list%}
+                <div class = 'selected_services'> <img src="{% static 'css/error_outline-24px.svg' %}" width="15" height="15" alt="восклзнак"> {{elem}}</div>
+                {%endfor%}
+
+            {%endif%}
+        </div>
+        
+            <button value="Проверить" id = 'post-form' class = 'before-submit' style = 'color:white' onClick = redir()>Еще раз</button>
+        
+    </div>
+    
+</div>

@@ -1,0 +1,6 @@
+<meta charset="UTF-8">
+{%if services%}
+    {% for serv in services|slice:"0:5" %}
+        <p class = 'search-result1' onclick="createBtn()">{{serv.name}}<p>
+    {% endfor %}
+{%endif%}

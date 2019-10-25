@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% load static %}
+<head>
+    <script src ="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+    <script src ="{% static 'js/exper.js' %}"></script>
+<body>
+
+    <form method="POST" accept-charset="UTF-8" id='main-form'> 
+        {% csrf_token %}
+        <input type='text' name = '111'id = 'polis_id'>
+        <input type='text' name = '222'id = 'sk_id'>
+        <input type='text' name = '333'id = 'serv_id'>
+        <input type="submit">
+    </form>
+
+</body>
+</head>

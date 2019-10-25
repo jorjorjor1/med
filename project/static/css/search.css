@@ -1,0 +1,328 @@
+
+.selected_services-cross{
+  position: absolute;
+  top: 5px;
+  left: -10px;
+  float: left;
+  border: none;
+  padding: 0;
+  background: none;
+}
+.selected_services{
+  /* float: left; */
+  position: relative;
+  top: 60%;
+  left: 11%;
+  height:50px;
+  color:black;
+}
+
+.services-area{
+  position: absolute; left: 10%; top: 50%; width: 80%;
+  -moz-column-count: 2;
+  -moz-column-gap: 10%;
+  -webkit-column-count: 2;
+  -webkit-column-gap: 10%;
+  column-count: 2;
+  column-gap: 10%;
+  min-height: 200px;
+  overflow: hidden;
+}
+
+body {
+    color: #8f8f8f;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    
+    
+    
+}
+.main{
+  position: relative;
+  max-width: 1170px;
+  margin: auto;
+  min-height: 840px;
+  font-family: Open Sans;
+  height: 100%;
+  
+}
+
+.sk_name_select select{
+  position: absolute; right: 10%; top: 30%; width: 50%;
+  width: 35%;
+  border-radius:15px;
+  -moz-border-radius:15px;
+  -webkit-border-radius:15px;
+  height: 40px;
+  padding-left:15px;
+  font-size: 20px;
+  outline: none;
+  font-family: Open Sans;
+
+}
+
+.sk_name_select_сhosen select{
+  position: absolute; right: 10%; top: 30%; width: 50%;
+  width: 35%;
+  border-radius:15px;
+  -moz-border-radius:15px;
+  -webkit-border-radius:15px;
+  height: 40px;
+  padding-left:15px;
+  font-size: 20px;
+  outline: none;
+  font-family: Open Sans;
+  z-index:2;
+}
+
+
+.polis_id input{
+  position: absolute; left: 10%; top: 30%; width: 50%;
+  background-color: #dddbdb;
+  width: 40%;
+  margin: 0px;
+  box-sizing: border-box;
+  height: 40px;
+  border-radius:15px;
+  -moz-border-radius:15px;
+  -webkit-border-radius:15px;
+  font-size: 20px;
+  padding-left: 15px;
+  outline: none;
+  font-family: Open Sans;
+}
+
+.included {
+position: absolute; left: 0; top: 50%; width: 50%;
+padding-left:5%;
+}
+
+.excluded {
+  position: absolute; right: 0%; top: 50%; width: 50%;
+}
+
+
+#search{
+  position: relative;
+  width: 100%;
+  height: 40px;
+  box-sizing: border-box;
+  -moz-border-radius:15px;
+  -webkit-border-radius:15px;
+  /* background-color: #dddbdb; */
+  padding-left: 15px;
+  font-size: 20px;
+  font-family: Open Sans;
+
+}
+
+/* #post-form{
+  position: absolute; left: 50%; top: 85%; width: 100px;
+  border-radius:15px;
+  -moz-border-radius:15px;
+  -webkit-border-radius:15px;
+} */
+
+
+
+input[name="polis_id_with_result"]::-webkit-input-placeholder {
+  color: black;
+}
+
+.service-buttons{
+  position: absolute; left: 10%; top: 40%; width: 80%;
+  display: block;
+  background-color: white;
+  border-radius:15px;
+  cursor: pointer;
+  margin: 0;
+  z-index: 2; 
+  border: rgb(34, 240, 223) solid 2px;
+  
+
+}
+.service-buttons:focus{
+  
+  outline: none;
+}
+#search:focus{
+  outline: none;
+}
+
+.search-result1{  
+  
+  padding-left: 20px;
+  display: block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  /*outline: rgb(34, 240, 223) solid 2px; */
+  /* border: rgb(34, 240, 223) solid 2px; */
+  background-color: white;
+}
+
+/* .search-result1:hover{
+  background:  rgb(34, 240, 223) solid 2px;
+} */
+
+/* .service-buttons:hover{
+  
+} */
+.end-date{
+  position: absolute; left: 11%; top: 35%; width: 50%;
+  font-size: 12px;
+}
+
+h1 {
+  position: absolute; left: 20%; top:2%;
+}
+
+.buttons-menu {
+  position: absolute;
+  top: 15%;
+  left: 40%;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+}
+
+.buttons-menu button {
+  width: 125px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.after-submit{
+  position: absolute; left: 45%; top: 85%; width: 200px; height: 50px;
+  background: #66D1C6;
+  border-radius: 50px;
+  outline: none;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  color: white;
+  border-style: none;
+  cursor: pointer;
+}
+
+.before-submit{
+  position: absolute; left: 45%; bottom:0; width: 200px; height: 50px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  outline: none;
+  background: white;
+  border-radius: 50px;
+  color: #ED462F;
+  border-style: none;
+  cursor: pointer;
+  border: solid 1px #ED462F;
+}
+
+.first button{
+  font-family: Open Sans;
+  outline: none;
+  font-size: 18px;
+  
+}
+
+.sk-tel{
+  position: absolute; left: 57%; top: 35%; width: 50%;
+  font-size: 12px;
+}
+
+.text-inside{
+  padding-left: 15px;
+  margin-bottom: 5px;
+}
+
+#search-error {
+  background: rgba(159, 243, 215, 0.7);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  z-index: 3;
+}
+
+#search-error:target {display: block;}
+
+#error-text-2{
+  margin-left: 20%;
+  margin-top: 15px;
+}
+
+#error-text-1{
+  margin-left: 13%;
+  margin-top: 2%;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 100.18%;
+}
+
+#text-in-close-button{
+  padding-left: 52px;
+  padding-top: 10px;
+  color: #ED462F;
+}
+
+#choose-services-text{
+  position: absolute; left: 11%; top: 37%; width: 50%;
+}
+
+.modal {
+  display: none;
+  position: fixed; 
+  z-index: 3; 
+  padding-top: 100px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%;
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 20%;
+  height: 15%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 18px;
+  width: 100px;
+  background-color: white;
+  border-radius: 50px;
+  color: #ED462F;
+  text-align: center;
+  border: 1px solid #ED462F;
+  position: relative;
+  margin-right:40%;
+  margin-top: 5%;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
